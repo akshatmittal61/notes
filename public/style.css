@@ -1,0 +1,306 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--bgcolor: #f0f0f0;
+	--bgcolor-400: #d2d2d2;
+	--bgcolor-100: #e1e1e1;
+	--bgcolor-700: #c3c3c3;
+
+	--tcolor: #121212;
+	--tcolor-100: #333333;
+	--tcolor-400: #272727;
+	--tcolor-700: #1d1d1d;
+
+	--blue: #4285f4;
+	--red: #ea4335;
+	--yellow: #fbbc05;
+	--green: #34a853;
+
+	--back-shadow: rgba(0, 0, 0, 0.2);
+	--back-shadow-light: rgba(0, 0, 0, 0.1);
+	--transition-time: 200ms;
+	--radius: 15px;
+}
+html {
+	font-size: 16px;
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+	min-height: 100vh;
+	width: 100vw;
+	background-color: var(--bgcolor);
+	color: var(--tcolor);
+	font-size: 1rem;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+a:hover,
+a:active,
+a:focus {
+	text-decoration: underline;
+	color: inherit;
+}
+img {
+	pointer-events: none;
+}
+.container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.notes-container,
+.add {
+	width: 75%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.notes {
+	width: 90%;
+	height: 90%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-flow: column;
+	border-radius: var(--radius);
+	border: 5px solid var(--tcolor-100);
+}
+.notes-head {
+	width: 100%;
+	height: 5rem;
+	background-color: var(--bgcolor-700);
+	color: var(--tcolor);
+	font-size: 2.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	letter-spacing: 0.1rem;
+	word-spacing: 0.5rem;
+	border-radius: var(--radius) var(--radius) 0 0;
+}
+.notes-body {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	/* flex-flow: column; */
+    flex-wrap: wrap;
+	padding: 1rem 2.5rem;
+}
+.note {
+	margin: 0.5rem;
+	border-radius: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-flow: column;
+	width: 40%;
+	height: fit-content;
+	border: 0.5px solid var(--bgcolor-700);
+	overflow: hidden;
+	position: relative;
+	padding: 0.5rem 0.5rem 0.5rem 0;
+	transition: all var(--transition-time) ease-in-out;
+}
+.note::before {
+	content: "";
+	position: absolute;
+	top: 0.65rem;
+	left: -1.5rem;
+	padding: 0.25rem;
+	background-color: #f0f0f0;
+	border: 3px solid #4285f4;
+	border-radius: 500px;
+}
+.note-head {
+	width: 100%;
+	height: 10%;
+	padding: 1rem 1rem 0.5rem 1rem;
+	display: flex;
+	justify-content: space-between;
+}
+.note-title {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 90%;
+	font-size: 1.25rem;
+	font-weight: 550;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.note-body {
+	width: 90%;
+	height: 90%;
+	padding: 0.5rem 1rem;
+}
+.note-description {
+	width: 100%;
+	height: 90%;
+	max-height: 10rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.note-link a {
+	font-size: 0.875rem;
+}
+.note-link a:hover,
+.note-link a:active,
+.note-link a:focus {
+    color: var(--blue);
+    text-decoration: underline;
+}
+
+form {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-flow: column;
+	padding: 5rem 7.5rem;
+	border-radius: var(--radius);
+	border: 5px solid var(--tcolor-100);
+    width: 100%;
+    height: 100%;
+}
+button {
+	background: transparent;
+	color: inherit;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	user-select: none;
+	margin: 0.25rem 0.5rem;
+	padding: 0.825rem 1.375rem;
+	outline: 0 solid transparent;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all var(--transition-time) ease-in-out;
+	background-color: var(--bgcolor-100);
+	color: var(--tcolor);
+}
+button:hover {
+	background-color: var(--bgcolor-400);
+	color: var(--tcolor-100);
+}
+button:active,
+button:focus,
+button:focus-visible,
+button:focus-within {
+	background-color: var(--bgcolor-700);
+	color: var(--tcolor);
+}
+input,
+textarea {
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	border: none;
+	outline: none;
+	outline: 3px solid transparent;
+	border-radius: 5px;
+	margin: 0.75rem;
+	padding: 0.75rem;
+	background-color: var(--back-shadow-light);
+	transition: all var(--transition-time) ease;
+    width: 100%;
+}
+input:active,
+textarea:active,
+input:focus,
+textarea:focus {
+	border: none;
+	background-color: var(--back-shadow-light);
+	outline: 3px solid var(--back-shadow);
+}
+input::placeholder,
+textarea::placeholder {
+	font-size: 0.875rem;
+}
+.add-btn {
+	background-color: var(--tcolor-400);
+	color: var(--bgcolor);
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	z-index: 2000;
+	border: none;
+	border-radius: 50%;
+	text-align: center;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 0;
+	height: 3.5rem;
+	width: 3.5rem;
+	overflow: visible;
+	transition: background-color 0.3s cubic-bezier(0.4, 0, 1, 1),
+		box-shadow 0.3s cubic-bezier(0.4, 0, 1, 1),
+		transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+		-webkit-transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+a.add-btn:hover,
+a.add-btn:active,
+a.add-btn:focus {
+	text-decoration: none;
+}
+.add-btn .material-icons {
+	transition: all 500ms ease;
+}
+.add-btn:hover {
+	background-color: var(--bgcolor-100);
+	color: var(--tcolor);
+}
+.add-btn:hover .material-icons {
+	transform: rotateZ(360deg);
+}
+.add-btn:active,
+.add-btn:focus {
+	outline: none;
+	background-color: var(--tcolor-700);
+	color: var(--bgcolor);
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+	background-color: rgba(0, 0, 0, 0.01);
+	border: 4px solid transparent;
+}
+::-webkit-scrollbar-track {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-thumb {
+	background-color: #7a7a7a;
+	border-radius: 500px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background-color: #525252;
+}
+.material-icons {
+	user-select: none;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dispn {
+	display: none !important;
+}

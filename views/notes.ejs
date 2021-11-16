@@ -1,0 +1,30 @@
+<%- include("header") -%>
+    <div class="notes-container">
+        <div class="notes">
+            <div class="notes-head">
+                Your Notes
+            </div>
+            <div class="notes-body">
+                <% for(let i=0;i<notes.length;++i) { %>
+                    <div class="note">
+                        <div class="note-head">
+                            <span class="note-title">
+                                <%= notes[i].title %>
+                            </span>
+                        </div>
+                        <div class="note-body">
+                            <div class="note-description">
+                                <%= notes[i].description %>
+                            </div>
+                            <div class="note-link">
+                                <a href=<%=notes[i].linkURL %> target="_blank">
+                                    <%= notes[i].linkText %>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
+        </div>
+    </div>
+    <%- include("footer") -%>

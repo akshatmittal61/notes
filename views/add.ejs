@@ -1,0 +1,11 @@
+<%- include("header") -%>
+    <div class="add">
+        <form action="/add" method="post">
+            <input type="text" name="title" id="title" placeholder="Title" required>
+            <textarea name="description" id="description" placeholder="Your Note Here" rows="5" required></textarea>
+            <input type="url" name="linkURL" id="linkURL" placeholder="Link URL" required>
+            <input type="text" name="linkText" id="linkText" placeholder="Link Text" required>
+            <button type="submit">Add Note</button>
+        </form>
+    </div>
+    <%- include("footer") -%>
