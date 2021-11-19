@@ -16,18 +16,27 @@ app.get("/add", (req, res) => {
     res.render('add');
 })
 app.post("/add", (req, res) => {
-    console.log(req.body.title);
-    console.log(req.body.description);
-    console.log(req.body.linkURL);
-    console.log(req.body.linkText);
     notes = [...notes, {
         title: req.body.title,
         description: req.body.description,
         linkURL: req.body.linkURL,
         linkText: req.body.linkText
     }];
+    notes.map((note) => {
+        if (note.linkURL === "" || note.linkURL === "#") {
+            note.linkURL = "#";
+        }
+        else {
+            if (note.linkText === "") note.linkText = "Click Here";
+            if (note.linkURL.slice(0, 4) !== "http") {
+                note.linkURL = "https://" + note.linkURL;
+            }
+        }
+        return note;
+    })
     res.redirect("/");
 })
-app.listen(3000, () => {
-    console.log("Server running at 3000");
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+    console.log(`Server running at ${PORT}`);
 })
