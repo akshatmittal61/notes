@@ -1,0 +1,66 @@
+<%- include("header") -%>
+
+    <div class="about">
+        <div class="about-image">
+            <img src="/images/favicon.svg" alt="Notes">
+        </div>
+        <div class="about-container">
+            <h1>About Notes</h1>
+            <section>
+                <h2>Introduction</h2>
+                <p>
+                    Notes is a full stack web application built in plain HTML and CSS.
+                    <br />
+                    <br />
+                    Runtime used in backend: <a target="_blank" href="https://nodejs.org/">Node.js</a>
+                    <br />
+                    Backend framework: <a target="_blank" href="https://expressjs.com/">Express</a>
+                    <br />
+                    Templating Engine: <a target="_blank" href="https://ejs.co/">EJS</a>
+                    <br />
+                </p>
+            </section>
+            <section>
+                <h2>Navigation</h2>
+                <h4>
+                    <a href="/">Home Page</a>
+                </h4>
+                <p>
+                    Home Page contains all your blogs. The posts will be truncated to just the initial words. To read
+                    the whole blog, click on the read more link at the bottom of any post.
+                </p>
+                <br />
+                <h4>
+                    <a href="/about">About Notes</a>
+                </h4>
+                <p>
+                    This is the about page of Notes.
+                </p>
+                <br />
+            </section>
+            <section>
+                <h2>API</h2>
+                <pre class=" language-javascript">
+                <code id="example" class=" language-javascript">
+                <span class="token function">fetch</span><span class="token punctuation">('</span><span class="token string"><%= `${dir}/api/notes` %></span><span class="token punctuation">')</span>
+                    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">response</span><span class="token operator">=&gt;</span>response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">json</span><span class="token operator">=&gt;</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                </code>
+                </pre>
+                <p>
+                    Notes has an api for all the notes in the application.
+                </p>
+                <span>
+                    <a target="_blank" href="/api/notes">/api/notes</a>
+                    All Notes
+                </span>
+                <h2>
+                    Routes
+                </h2>
+                <span>
+                    GET <a target="_blank" href="/api/notes/0">/api/note/0</a>
+                    For getting a note with a particular id
+                </span>
+            </section>
+        </div>
+    </div>

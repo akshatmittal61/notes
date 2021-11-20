@@ -1,0 +1,74 @@
+.add-form {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-flow: column;
+	padding: 5rem 7.5rem;
+	border-radius: var(--radius);
+	border: 5px solid var(--tcolor-100);
+	width: 100%;
+	height: 100%;
+}
+.delete-form {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.add-btn,
+.btn {
+	background: transparent;
+	color: inherit;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	user-select: none;
+	margin: 0.25rem 0.5rem;
+	padding: 0.825rem 1.375rem;
+	outline: 0 solid transparent;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all var(--transition-time) ease-in-out;
+	background-color: var(--bgcolor-100);
+	color: var(--tcolor);
+}
+.add-btn:hover {
+	background-color: var(--bgcolor-400);
+	color: var(--tcolor-100);
+}
+.add-btn:active,
+.add-btn:focus,
+.add-btn:focus-visible,
+.add-btn:focus-within {
+	background-color: var(--bgcolor-700);
+	color: var(--tcolor);
+}
+.btn {
+	border-radius: 500px;
+	margin: 0;
+}
+.add-input {
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	border: none;
+	outline: none;
+	outline: 3px solid transparent;
+	border-radius: 5px;
+	margin: 0.75rem;
+	padding: 0.75rem;
+	background-color: var(--back-shadow-light);
+	transition: all var(--transition-time) ease;
+	width: 100%;
+	resize: none;
+}
+.add-input:active,
+.add-input:focus {
+	border: none;
+	background-color: var(--back-shadow-light);
+	outline: 3px solid var(--back-shadow);
+}
+.add-input::placeholder {
+	font-size: 0.875rem;
+}

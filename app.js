@@ -17,6 +17,7 @@ app.get("/add", (req, res) => {
 })
 app.post("/add", (req, res) => {
     notes = [...notes, {
+        id: notes.length,
         title: req.body.title,
         description: req.body.description,
         linkURL: req.body.linkURL,
@@ -35,6 +36,50 @@ app.post("/add", (req, res) => {
         return note;
     })
     res.redirect("/");
+})
+app.get('/about', (req, res) => {
+    res.render('about', { dir: req.get('host') });
+})
+app.get('/api/notes', (req, res) => {
+    res.json(notes);
+})
+app.get('/api/notes/:id', (req, res) => {
+    let id = +req.params.id;
+    if (id < notes.length) {
+        let note = notes[id];
+        res.json(note);
+    }
+    else res.json({
+        status: 404,
+        message: "Note Not Found"
+    })
+})
+app.post('/notes/:id/delete', (req, res) => {
+    let id = +req.params.id;
+    let newArray = [];
+    if (id < notes.length) {
+        newArray = notes.filter(note => note.id !== id);
+        newArray.map((note, index) => {
+            note.id = index;
+        })
+        notes = [...newArray];
+        res.redirect('/');
+    }
+    else res.json({
+        status: 404,
+        message: "Note Not Found"
+    })
+})
+app.post('/notes/:id/launch', (req, res) => {
+    let id = +req.params.id;
+    if (id < notes.length) {
+        let note = notes[id];
+        res.json(note);
+    }
+    else res.json({
+        status: 404,
+        message: "Note Not Found"
+    })
 })
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {

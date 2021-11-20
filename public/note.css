@@ -1,0 +1,86 @@
+.note {
+	margin: 0.5rem;
+	border-radius: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-flow: column;
+	width: 45%;
+	height: fit-content;
+	border: 0.5px solid var(--bgcolor-700);
+	overflow: hidden;
+	transition: all var(--transition-time) ease-in-out;
+}
+.note-head {
+	width: 100%;
+	height: 10%;
+	padding: 1rem 1rem 0.5rem 1rem;
+	display: flex;
+	justify-content: space-between;
+}
+.note-head__title {
+	width: 60%;
+	font-size: 1.25rem;
+	font-weight: 550;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.note-head__image {
+	width: 15%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.note-body {
+	width: 100%;
+	height: 90%;
+}
+.note-description {
+	width: 100%;
+	height: 90%;
+	padding: 0.5rem 1rem;
+}
+.note-description__content {
+	max-height: 10rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.note-link a {
+	font-size: 0.9rem;
+}
+.note-link a:hover,
+.note-link a:active,
+.note-link a:focus {
+	text-decoration: underline;
+}
+.note-control {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 0.25rem;
+	background: transparent;
+}
+.note-control .material-icons {
+	font-size: 1rem;
+	color: var(--tcolor-100);
+	border-radius: 500px;
+	padding: 0.5rem;
+	transition: all var(--transition-time) ease-in-out;
+}
+.note-control:hover .material-icons {
+	background-color: var(--back-shadow-light);
+}
+button.note-control {
+	opacity: 0;
+}
+button.note-control :active,
+button.note-control :focus {
+	opacity: 1;
+}
+.note:hover button.note-control {
+	opacity: 1;
+}

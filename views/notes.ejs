@@ -8,18 +8,34 @@
                 <% for(let i=0;i<notes.length;++i) { %>
                     <div class="note">
                         <div class="note-head">
-                            <span class="note-title">
-                                <%= notes[i].title %>
-                            </span>
+                            <a class="note-head__title" href=<%=`/api/notes/${notes[i].id}` %> target="_blank">
+                                <%=notes[i].title %>
+                            </a>
+                            <div class="note-head__image">
+                                <form method="post" class="delete-form" action=<%=`/notes/${notes[i].id}/launch` %>>
+                                    <button class="btn note-control launch">
+                                        <span class="btn material-icons">launch</span>
+                                    </button>
+                                </form>
+                                <form method="post" class="delete-form" action=<%=`/notes/${notes[i].id}/delete` %>>
+                                    <button class="btn note-control delete">
+                                        <span class="btn material-icons">delete</span>
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                         <div class="note-body">
                             <div class="note-description">
-                                <%= notes[i].description %>
-                            </div>
-                            <div class="note-link">
-                                <a href=<%=notes[i].linkURL %> target="_blank">
-                                    <%= notes[i].linkText %>
-                                </a>
+                                <div class="note-description__content">
+                                    <%= notes[i].description %>
+                                </div>
+                                <div class="note-link">
+                                    <a href=<%=notes[i].linkURL %> target=<%= (notes[i].linkURL==="" ||
+                                            notes[i].linkURL==="#" ) ? "_self" : "_blank" %>
+                                            rel="noreferrer">
+                                            <%=notes[i].linkText %>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

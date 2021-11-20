@@ -1,0 +1,41 @@
+.fab {
+	background-color: var(--tcolor-400);
+	color: var(--bgcolor);
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	z-index: 2000;
+	border: none;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	cursor: pointer;
+	min-width: 0;
+	height: 3.5rem;
+	width: 3.5rem;
+	overflow: visible;
+	transition: background-color 0.3s cubic-bezier(0.4, 0, 1, 1),
+		box-shadow 0.3s cubic-bezier(0.4, 0, 1, 1),
+		transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+		-webkit-transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.fab .material-icons {
+	transition: all 500ms ease;
+	color: var(--bgcolor);
+}
+.fab:hover {
+	background-color: var(--bgcolor-400);
+	color: var(--tcolor);
+}
+.fab:hover .material-icons {
+	transform: rotateZ(360deg);
+	color: var(--tcolor);
+}
+.fab:active,
+.fab:focus {
+	outline: none;
+	background-color: var(--tcolor-700);
+	color: var(--bgcolor);
+}

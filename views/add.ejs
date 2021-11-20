@@ -1,11 +1,12 @@
 <%- include("header") -%>
     <div class="add">
-        <form action="/add" method="post">
-            <input type="text" name="title" id="title" placeholder="Title">
-            <textarea name="description" id="description" placeholder="Your Note Here" rows="5" required></textarea>
-            <input type="url" name="linkURL" id="linkURL" placeholder="Link URL">
-            <input type="text" name="linkText" id="linkText" placeholder="Link Text">
-            <button type="submit">Add Note</button>
+        <form action="/add" method="post" class="add-form">
+            <input type="text" name="title" id="title" placeholder="Title" class="add-input">
+            <textarea name="description" id="description" placeholder="Your Note Here" rows="5" class="add-input"
+                required></textarea>
+            <input type="url" name="linkURL" id="linkURL" placeholder="Link URL" class="add-input">
+            <input type="text" name="linkText" id="linkText" placeholder="Link Text" class="add-input">
+            <button type="submit" class="add-btn">Add Note</button>
         </form>
     </div>
     <%- include("footer") -%>
